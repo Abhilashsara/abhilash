@@ -6,6 +6,27 @@
     position: relative;
     overflow: hidden;
 }
+.bird img{
+    margin-top: 10px;
+    width: 70px;
+    height: 100px;
+    animation: bird 20s linear infinite;
+    
+}
+@keyframes bird 
+{
+    0%{
+        transform: translateX(0PX) rotate(45deg) ;
+    }
+    50%{
+        transform: translateX(700px)rotate(45deg);
+    }
+    100%{
+        transform: translateX(1400px)rotate(45deg);
+    }
+    
+}
+
 .highway
 {
     height: 200px;
