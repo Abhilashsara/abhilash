@@ -8,8 +8,8 @@
 }
 .bird img{
     margin-top: 10px;
-    width: 70px;
-    height: 100px;
+    width: 10px;
+    height: 40px;
     animation: bird 20s linear infinite;
     
 }
