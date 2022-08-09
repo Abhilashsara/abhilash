@@ -12,17 +12,19 @@
     var day= date.getDate();
     var month=date.getMonth()+1;
     var year =date.getFullYear();
-    document.write("Today Date:"+0+day+"/"+0+month+"/"+year);
+    document.write("Today Date: "+0+day+"/"+0+month+"/"+year);
     var weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     var day = weekday[date.getDay()];
-    document.write("<br>Today Day:"+day);
+    document.write("<br>Today Day:  "+day);
 
     var name = window.prompt("Enter Your Name ");
-        document.body.style.backgroundColor ="green";
-        document.body.style.fonrstyle ="arial";
-        document.body.style.textshadow ="darkpink";
+        document.body.style.backgroundColor ="pink";
+        document.body.style.fontstyle ="Courier";
+        document.body.style.margin="200px 0px 300px 500px"
+        document.body.style.fontSize='30px'
+        document.body.style.textshadow ="";
         document.write("<br>"+"Your Name is : " );
-        document.write(name.fontcolor("pink"));
+        document.write(name.fontcolor("yellow"));
 
         const num1 = parseInt(prompt('Entre the first number'));
         const num2 = parseInt(prompt('Entre the second number'));
