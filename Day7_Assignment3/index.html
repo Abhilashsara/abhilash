@@ -1,26 +1,29 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body  >
+    <script>
+    document.body.style.backgroundColor="gray";
+    document.body.style.color="orange";
+    document.body.style.fontSize="30px";
+    document.body.style.fontFamily="Cursive";
+    document.body.style.margin="100px 0px 0px 500px";
+    var info = {
+        name: "Abhilash Saraswat",
+        age: 21,
+        Address: {city:"Mathura", state:"UP", pincode:281001 },
+        Hobbies: ["Listening Music","Gaming"],
+        details: function() {
+            return this.name +" from "+ this.Address.city+"<br>"+"Age: "+this.age+"<br>"+"Hobbies: "+this.Hobbies;
 
-<h2>Personal Detail</h2>
-
-
-<p id="demo"></p>
-
-<script>
-    
-person = prompt("Please enter your name", "Abhilash Saraswat");
-person = prompt("Please enter your age", "21");
-// person = prompt("Please enter your name", "Abhilash Saraswat");
-// person = prompt("Please enter your name", "Abhilash Saraswat");
-// person = prompt("Please enter your name", "Abhilash Saraswat");
-
-// if (person ) {
-//   document.getElementById("demo").innerHTML =
-//    ""+ person +"" ;
-// }
-document.write(person);
-</script>
-
+        }
+    }
+    document.write(info.details());</script>
+   
 </body>
 </html>
