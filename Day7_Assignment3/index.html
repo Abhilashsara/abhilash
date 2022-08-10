@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>src=myscript.js</script>
+</head>
+<body>
+    <script>
+         var Person = function( Name, Age ) {
+         this.name = Name;
+         this.age = Age;
+         this.displayInstance = function() {
+           console.log("The displayInstance -output-"+
+                       "\n============================" +
+                     "\n\t name: " + this.name +
+                     "\n\t age: " + this.age);
+                       };
+       };
+    
+  var myObj = new Person("Abhilash Saraswat",21);
+    
+  myObj.displayInstance();
+  console.log( myObj );
+    </script>
+        
+    
+</body>
+</html>
