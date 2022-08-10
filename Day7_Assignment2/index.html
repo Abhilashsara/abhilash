@@ -4,9 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess the number game </title>
+    <title>Document</title>
 </head>
 <body>
     
+   
+    <script>
+        
+         document.body.style.backgroundColor ="pink";
+         var num=Math.floor(Math.random() * 10);
+        var i=3;
+        while(i>0){
+            var same=prompt("Guess The Number");
+            if (same>9||same<0) {
+                alert("You Enter the no out of box");
+                i--;
+            } else if (same==num) {
+                alert("Congratulations you guess the right no.")
+                
+                break;
+            } else {
+                alert("Try Again");
+                i--;
+            }
+            if(i==0)
+            alert("game over");
+        }
+     
+
+    </script>
 </body>
 </html>
