@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-         var people = [
-  { name: "Ashish", age: 23 },
-  { name: "Ajay", age: 21 },
-  { name: "Arvind", age: 26 },
-  { name: "Mahesh", age: 28 },
-  { name: "Jay", age: 19 }
-];
-// var updatedpeople = [];
-// for (var i = 0; i<age.length; i++);{
-// if (people[i].pop<25){
-//     updatedprople.push(people[i]);
-// }
-// }
-// console.log(updatedpeople);
-
-updatedpeople=people.filter((peoples)=> peoples.age<25).sort((n1,n2)=> n2.name-n1.name).reverse();
-console.log(updatedpeople);
-</script>
-    
-</body>
+        document.body.style.backgroundColor="gray";
+        document.body.style.margin="0px 0px 0px 300px";
+        document.body.style.fontSize="25px";
+        document.body.style.fontFamily="Georgia";
+      var people = [
+        { name: "Abhi", age: 21 },
+        { name: "Montu", age: 23 },
+        { name: "Jaish", age: 26 },
+        { name: "Prateek", age: 24 },
+        { name: "Harsh", age: 19 },
+      ];
+    //   replace(/[{}]/g, '');
+      var my=[];
+      my = people.filter((a) => a.age < 25);
+      my.sort((n1,n2)=> n1.age-n2.age).reverse()
+      var re=JSON.stringify(my,null,"<br>");
+     var rt=re.replace(/[\[\]']+/g,'');
+     var rl=rt.replace(/[{}]/g, '');
+     var ry=rl.replace(/"/g, '');
+     var ru=ry.replace(/,/g, '')
+     document.write(ru);
+    </script>
+  </body>
 </html>
