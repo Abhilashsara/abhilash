@@ -15,7 +15,9 @@ if(inputVal.value.trim()!=0){
     }
     taskList.push(inputVal.value)
     localStorage.setItem('localItem', JSON.stringify(taskList)); 
+    
 }
+// 
 
     showItem()
 })
