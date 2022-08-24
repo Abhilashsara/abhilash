@@ -1,34 +1,173 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 2s linear infinite;
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loader Animation</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(to right top, blue, pink);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .box {
+        width: 150px;
+        height: 150px;
+        border: 13px solid rgba(255, 255, 255, 0.511);
+        border-top: 13px solid white;
+        border-radius: 50%;
+        animation: loader 2s linear infinite;
+      }
+
+      @keyframes loader {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      p {
+        margin-top: 10px;
+        font-family: arial;
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+        text-transform: uppercase;
+        animation: popup 1s linear infinite;
+      }
+
+      @keyframes popup {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .container1{
+        min-height: 100vh;
+        display: none;
+      }
+      #or{
+    padding-top: 20px;
+    background-color: beige;
+    padding-bottom: 20px;
+   
 }
 
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
+.header{
+   padding-top: 10px;
+    width: 100%;
+    height:90vh;
+    background-color: aliceblue;
+    text-align: center;
+    box-sizing: border-box;
+ 
+   
 }
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+.h{
+    box-sizing: border-box;
+    background-color: aliceblue;
+    text-align:center;
 }
+#r{
+    background-color: aliceblue;
 
-</style>
-</head>
-<h2>How To Create A Loader</h2>
+}
+#r ul{
+    display: table;
+    margin:0 auto;
+}
+#r li{
+    padding: 10px;
+    text-align: justify;
+    padding-right: 60px;
+}
+ p{
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align:center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: aqua;
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+      <p>loading</p>
+    </div>
+    <div class="container1">
+      <div class="header">
+        <h1>Field Marshal Sam Manekshaw</h1> 
+            <h4>Mind Behind Indian Troop Success In 1971 War</h4> 
+       
+         
+           
+      <div id="or"> <img src="https://www.defenceview.in/wp-content/uploads/2020/08/29855823_1877105615696187_856181179_n.jpg" alt="Sam Manekshaw" width="1100" height="400">
+        <p >Sam Bahadur,Man In Middle, Fireup The Young Paratroopers Of Special Froces During 1971 War</p></div>
+        <div id="r"><h3>Here's The Time Line Of The Sam Bahadur's Life:</h3>
+            <ul>
+                <li>
+                    <strong>1914</strong>- Born in Amritsar,Punjab
+                </li>
+               
+                <li>
+                    <strong>1932</strong>- Manekshaw joined the first intake of the Indian Military Academy, Dehradun
+                </li>
+                <li>
+                    <strong>1944</strong>-  In World War II, he was awarded the Military Cross for gallantry
+                </li>
+                <li>
+                    <strong>1944</strong>- He was promoted to the rank of brigadier while serving at the Military Operations Directorate. He became commander of 167 Infantry Brigade
+                </li>
+                <li>
+                    <strong>1952</strong>-  he took over as the Director of Military Training at Army Headquarters.
+                </li>
+                <li>
+                    <strong>1969</strong>-  Manekshaw became the seventh chief of the army staff.
+                </li>
+                <li>
+                    <strong>1971</strong>-  He was awarded the Padma Vibhushan and the Padma Bhushan.
+                </li>
+                <li>
+                    <strong>2008</strong>- dies at age of 94.
+                </li>
+             
 
-<div class="loader"></div>
-
-</body>
+            </ul>
+            <p>A 'Yes man' is a dangerous man. He is a menace. He will go very far. He can become a minister, a secretary or a Field Marshall but he can never become a leader nor, ever be respected. He will be used by his superiors, disliked by his colleagues and despised by his subordinates. So discard the 'Yes man'.</p>
+            <p>-Sam Manekshaw</p>
+            <p>Please go through the first Field  Marshal <a href = "https://en.wikipedia.org/wiki/Sam_Manekshaw"> Wikipedia entry </a> </p>
+        </div>
+    </div>
+    </div>
+    <script>
+      window.onload=function(){
+        setInterval(() => {
+          stoploader();
+        },3000);
+      }
+      function stoploader(){
+        document.querySelector('.container').style.display='none';
+        document.querySelector('.container1').style.display='block';
+      }
+    </script>
+  </body>
 </html>
