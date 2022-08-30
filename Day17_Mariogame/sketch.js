@@ -6,6 +6,9 @@ var mario, mario_running;
 var ground;
 var brickImage, bricksGroup;
 var coins, coinsGroup;
+var coinImage, coinsGroup;
+var coinScore = 0;
+var CoinSound;
 
 
 // Load Assets
@@ -20,10 +23,23 @@ function preload() {
     "image/mar6.png"
   );
   brickImage = loadImage("image/brick.png");
+  coinImage = loadAnimation(
+    "image/con1.png",
+    "image/con2.png",
+    "image/con3.png", 
+    "image/con4.png",
+    "image/con5.png",
+    "image/con6.png"
+  );
+  coinSound = loadSound("sounds/coinSound.mp3");
+  jumpSound = loadSound("sounds/jump.mp3");
+
 }
 
 // create basic Scaleton with their required credentials
 function setup() {
+
+
   // Create Canvas
   createCanvas(1000, 600);
 
@@ -35,11 +51,14 @@ function setup() {
   bg.addImage(bgImage);
   mario.addAnimation("running", mario_running);
 
+
+
+
   // Scale Objects
   bg.scale = 0.5;
   mario.scale = 0.2;
 
-  // create Ground
+  // create Ground 
   ground = createSprite(200, 580, 400, 10);
   bricksGroup = new Group();
  coinsGroup = new Group();
@@ -53,6 +72,8 @@ function draw() {
 
   // mario Fly
   if (keyDown("space")) mario.velocityY = -10;
+  jumpSound.play();
+}
 
   // add Gravity
   mario.velocityY = mario.velocityY + 0.5;
@@ -76,10 +97,32 @@ function draw() {
   if (mario.y < 50) {
     mario.y = 50;
   }
+  
+  generateCoins(); 
+
+
+
+
+  for (var i = 0; i < coinsGroup.length; i++) {
+    var temp = coinsGroup.get(i);
+    if (mario.isTouching(temp)) {
+      temp.destroy();
+      coinSound.play();
+      coinScore++;
+      temp = null;
+    }
+  }
+  
+
 
   // Redraw Objects
   drawSprites();
-}
+
+  textSize(20);
+  fill("brown");
+  text("Coins Collected: " + coinScore, 500, 50);
+
+
 
 function generateBricks() {
   if (frameCount % 80 == 0) {
@@ -92,5 +135,16 @@ function generateBricks() {
     brick.velocityX = -5;
     brick.lifetime = 250;
     bricksGroup.add(brick);
+  }
+}
+function generateCoins() {
+  if (frameCount % 50 == 0) {
+    var coin = createSprite(1200, 100, 40, 10);
+    coin.y = random(50, 450);
+    coin.addAnimation("rotate", coinImage);
+    coin.scale = 0.1;
+    coin.velocityX = -5;
+    coin.lifetime = 250;
+    coinsGroup.add(coin);
   }
 }
